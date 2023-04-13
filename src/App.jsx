@@ -5,6 +5,7 @@ import logo from "./assets/images/logo.svg";
 import mastercraftLogo from "./assets/images/logo-mastercraft.svg";
 import hamburger from "./assets/images/icon-hamburger.svg";
 import close from "./assets/images/icon-close-modal.svg";
+import bookmark from "./assets/images/icon-bookmark.svg";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -51,8 +52,8 @@ function App() {
           </ul>
         )}
       </div>
-      <div className="w-screen flex flex-col justify-center items-center">
-        <div className="flex flex-col justify-center p-12 m-5 md:m-0 absolute top-80 bg-white rounded-lg shadow-lg">
+      <div className="w-full flex flex-col justify-center items-center absolute top-80">
+        <div className="flex flex-col justify-center mb-6 p-12 bg-white rounded-lg shadow-lg w-96 sm:min-w-[600px] md:min-w-[700px]">
           <div className="flex justify-center">
             <img
               className="h-14 w-14 -top-8 absolute"
@@ -60,33 +61,45 @@ function App() {
               alt=""
             />
           </div>
-          <div className="">
-            <h2>Mastercraft Bamboo Monitor Riser</h2>
-            <p>
+          <div className="flex flex-col justify-center items-center text-center">
+            <h2 className="text-2xl font-bold">
+              Mastercraft Bamboo Monitor Riser
+            </h2>
+            <p className="text-[#7A7A7A] py-6">
               A beautiful & handcrafted monitor stand to reduce neck and eye
               strain.
             </p>
-            <div>
-              <button>Back this project</button>
-              <button>bookmark</button>
+            <div className="flex justify-between w-full">
+              <button className="text-white font-bold bg-[#3CB4AC] active:bg-[#147B74] py-4 px-10 rounded-full">
+                Back this project
+              </button>
+              <button className="flex items-center relative">
+                <img src={bookmark} alt="bookmark" />
+                <span className="hidden sm:block text-sm font-bold bg-gray-200 rounded-full p-3 px-4">
+                  Bookmark
+                </span>
+              </button>
             </div>
           </div>
-          <div>
-            <div className="flex flex-col border-b border-gray-300">
-              <h3>$89,914</h3>
-              <p>of $100,000 backed</p>
-            </div>
-            <div className="flex flex-col border-b border-gray-300">
-              <h3>5,007</h3>
-              <p>total backers</p>
-            </div>
-            <div className="flex flex-col">
-              <h3>56</h3>
-              <p>days left</p>
-            </div>
-          </div>
-          <div>about this project</div>
         </div>
+        <div className="flex flex-col bg-white rounded-lg shadow-lg w-96 sm:min-w-[600px] md:min-w-[700px]">
+          <div className="flex flex-col md:flex-row justify-center md:justify-evenly items-center text-center md:text-left p-12 pb-0 md:pb-6 m-5 md:m-0">
+            <div className="flex flex-col pb-5 md:pb-0 border-b md:border-0 border-gray-300">
+              <h3 className="text-3xl font-bold mb-2">$89,914</h3>
+              <p className="text-[#7A7A7A] text-sm">of $100,000 backed</p>
+            </div>
+            <div className="flex flex-col py-5 md:py-0 border-b md:border-0 border-gray-300">
+              <h3 className="text-3xl font-bold mb-2">5,007</h3>
+              <p className="text-[#7A7A7A] text-sm">total backers</p>
+            </div>
+            <div className="flex flex-col py-5 md:py-0">
+              <h3 className="text-3xl font-bold mb-2">56</h3>
+              <p className="text-[#7A7A7A] text-sm">days left</p>
+            </div>
+          </div>
+          <div className="pb-6 pl-12">progress bar</div>
+        </div>
+        <div>about this project</div>
       </div>
     </div>
   );
